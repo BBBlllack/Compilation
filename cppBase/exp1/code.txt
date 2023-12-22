@@ -1,0 +1,3 @@
++ - * / while
+do 12 .34 3e4 th th1
+1weq if myid>=1.5E1 then x=y

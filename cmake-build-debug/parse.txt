@@ -1,0 +1,17 @@
+dest string: i-ii+#
+current char: i
+STACK: T e # 
+STACK: F t e # 
+STACK: i t e # 
+SUCCESS to recognize symbol i
+current char: -
+STACK: A T e # 
+STACK: - T e # 
+SUCCESS to recognize symbol -
+current char: i
+STACK: F t e # 
+STACK: i t e # 
+SUCCESS to recognize symbol i
+current char: i
+ERROR! THE SYMBOL i can't appear at the back of i WITH i-ii
+

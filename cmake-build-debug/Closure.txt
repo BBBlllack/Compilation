@@ -1,0 +1,732 @@
+该文法的项目集和GO函数：
+I0:
+M->·S，#
+S->·ifSthenSR，#
+S->·id=E，#
+S->·whileBdoS，#
+GO(I0，w) = I3
+GO(I0，i) = I2
+GO(I0，S) = I1
+
+I1:
+M->S·，#
+
+I2:
+S->i·fSthenSR，#
+S->i·d=E，#
+GO(I2，d) = I5
+GO(I2，f) = I4
+
+I3:
+S->w·hileBdoS，#
+GO(I3，h) = I6
+
+I4:
+S->if·SthenSR，#
+S->·ifSthenSR，t
+S->·id=E，t
+S->·whileBdoS，t
+GO(I4，w) = I9
+GO(I4，i) = I8
+GO(I4，S) = I7
+
+I5:
+S->id·=E，#
+GO(I5，=) = I10
+
+I6:
+S->wh·ileBdoS，#
+GO(I6，i) = I11
+
+I7:
+S->ifS·thenSR，#
+GO(I7，t) = I12
+
+I8:
+S->i·fSthenSR，t
+S->i·d=E，t
+GO(I8，d) = I14
+GO(I8，f) = I13
+
+I9:
+S->w·hileBdoS，t
+GO(I9，h) = I15
+
+I10:
+S->id=·E，#
+E->·E+T，#/+
+E->·T，#/+
+T->·T*F，#/*/+
+T->·F，#/*/+
+F->·(E)，#/*/+
+F->·i，#/*/+
+GO(I10，i) = I20
+GO(I10，() = I19
+GO(I10，F) = I18
+GO(I10，T) = I17
+GO(I10，E) = I16
+
+I11:
+S->whi·leBdoS，#
+GO(I11，l) = I21
+
+I12:
+S->ifSt·henSR，#
+GO(I12，h) = I22
+
+I13:
+S->if·SthenSR，t
+S->·ifSthenSR，t
+S->·id=E，t
+S->·whileBdoS，t
+GO(I13，w) = I9
+GO(I13，i) = I8
+GO(I13，S) = I23
+
+I14:
+S->id·=E，t
+GO(I14，=) = I24
+
+I15:
+S->wh·ileBdoS，t
+GO(I15，i) = I25
+
+I16:
+S->id=E·，#
+E->E·+T，#/+
+GO(I16，+) = I26
+
+I17:
+E->T·，#/+
+T->T·*F，#/*/+
+GO(I17，*) = I27
+
+I18:
+T->F·，#/*/+
+
+I19:
+F->(·E)，#/*/+
+E->·E+T，)/+
+E->·T，)/+
+T->·T*F，)/*/+
+T->·F，)/*/+
+F->·(E)，)/*/+
+F->·i，)/*/+
+GO(I19，i) = I32
+GO(I19，() = I31
+GO(I19，F) = I30
+GO(I19，T) = I29
+GO(I19，E) = I28
+
+I20:
+F->i·，#/*/+
+
+I21:
+S->whil·eBdoS，#
+GO(I21，e) = I33
+
+I22:
+S->ifSth·enSR，#
+GO(I22，e) = I34
+
+I23:
+S->ifS·thenSR，t
+GO(I23，t) = I35
+
+I24:
+S->id=·E，t
+E->·E+T，+/t
+E->·T，+/t
+T->·T*F，*/+/t
+T->·F，*/+/t
+F->·(E)，*/+/t
+F->·i，*/+/t
+GO(I24，i) = I40
+GO(I24，() = I39
+GO(I24，F) = I38
+GO(I24，T) = I37
+GO(I24，E) = I36
+
+I25:
+S->whi·leBdoS，t
+GO(I25，l) = I41
+
+I26:
+E->E+·T，#/+
+T->·T*F，#/*/+
+T->·F，#/*/+
+F->·(E)，#/*/+
+F->·i，#/*/+
+GO(I26，i) = I20
+GO(I26，() = I19
+GO(I26，F) = I18
+GO(I26，T) = I42
+
+I27:
+T->T*·F，#/*/+
+F->·(E)，#/*/+
+F->·i，#/*/+
+GO(I27，i) = I20
+GO(I27，() = I19
+GO(I27，F) = I43
+
+I28:
+F->(E·)，#/*/+
+E->E·+T，)/+
+GO(I28，+) = I45
+GO(I28，)) = I44
+
+I29:
+E->T·，)/+
+T->T·*F，)/*/+
+T->T·*F，)/*/+
+T->T·*F，)/*/+
+T->T·*F，)/*/+
+GO(I29，*) = I46
+
+I30:
+T->F·，)/*/+
+
+I31:
+F->(·E)，)/*/+
+E->·E+T，)/+
+E->·T，)/+
+T->·T*F，)/*/+
+T->·F，)/*/+
+F->·(E)，)/*/+
+F->·i，)/*/+
+GO(I31，i) = I32
+GO(I31，() = I31
+GO(I31，F) = I30
+GO(I31，T) = I29
+GO(I31，E) = I47
+
+I32:
+F->i·，)/*/+
+
+I33:
+S->while·BdoS，#
+B->·bool，d
+B->·id，d
+GO(I33，i) = I50
+GO(I33，b) = I49
+GO(I33，B) = I48
+
+I34:
+S->ifSthe·nSR，#
+GO(I34，n) = I51
+
+I35:
+S->ifSt·henSR，t
+GO(I35，h) = I52
+
+I36:
+S->id=E·，t
+E->E·+T，+/t
+GO(I36，+) = I53
+
+I37:
+E->T·，+/t
+T->T·*F，*/+/t
+GO(I37，*) = I54
+
+I38:
+T->F·，*/+/t
+
+I39:
+F->(·E)，*/+/t
+E->·E+T，)/+
+E->·T，)/+
+T->·T*F，)/*/+
+T->·F，)/*/+
+F->·(E)，)/*/+
+F->·i，)/*/+
+GO(I39，i) = I32
+GO(I39，() = I31
+GO(I39，F) = I30
+GO(I39，T) = I29
+GO(I39，E) = I55
+
+I40:
+F->i·，*/+/t
+
+I41:
+S->whil·eBdoS，t
+GO(I41，e) = I56
+
+I42:
+E->E+T·，#/+
+T->T·*F，#/*/+
+GO(I42，*) = I27
+
+I43:
+T->T*F·，#/*/+
+
+I44:
+F->(E)·，#/*/+
+
+I45:
+E->E+·T，)/+
+T->·T*F，)/*/+
+T->·F，)/*/+
+F->·(E)，)/*/+
+F->·i，)/*/+
+GO(I45，i) = I32
+GO(I45，() = I31
+GO(I45，F) = I30
+GO(I45，T) = I57
+
+I46:
+T->T*·F，)/*/+
+F->·(E)，)/*/+
+F->·i，)/*/+
+GO(I46，i) = I32
+GO(I46，() = I31
+GO(I46，F) = I58
+
+I47:
+F->(E·)，)/*/+
+E->E·+T，)/+
+GO(I47，+) = I45
+GO(I47，)) = I59
+
+I48:
+S->whileB·doS，#
+GO(I48，d) = I60
+
+I49:
+B->b·ool，d
+GO(I49，o) = I61
+
+I50:
+B->i·d，d
+GO(I50，d) = I62
+
+I51:
+S->ifSthen·SR，#
+S->·ifSthenSR，e
+S->·id=E，e
+S->·whileBdoS，e
+GO(I51，w) = I65
+GO(I51，i) = I64
+GO(I51，S) = I63
+
+I52:
+S->ifSth·enSR，t
+GO(I52，e) = I66
+
+I53:
+E->E+·T，+/t
+T->·T*F，*/+/t
+T->·F，*/+/t
+F->·(E)，*/+/t
+F->·i，*/+/t
+GO(I53，i) = I40
+GO(I53，() = I39
+GO(I53，F) = I38
+GO(I53，T) = I67
+
+I54:
+T->T*·F，*/+/t
+F->·(E)，*/+/t
+F->·i，*/+/t
+GO(I54，i) = I40
+GO(I54，() = I39
+GO(I54，F) = I68
+
+I55:
+F->(E·)，*/+/t
+E->E·+T，)/+
+GO(I55，+) = I45
+GO(I55，)) = I69
+
+I56:
+S->while·BdoS，t
+B->·bool，d
+B->·id，d
+GO(I56，i) = I50
+GO(I56，b) = I49
+GO(I56，B) = I70
+
+I57:
+E->E+T·，)/+
+T->T·*F，)/*/+
+GO(I57，*) = I46
+
+I58:
+T->T*F·，)/*/+
+
+I59:
+F->(E)·，)/*/+
+
+I60:
+S->whileBd·oS，#
+GO(I60，o) = I71
+
+I61:
+B->bo·ol，d
+GO(I61，o) = I72
+
+I62:
+B->id·，d
+
+I63:
+S->ifSthenS·R，#
+R->·elseS，#
+R->·end，#
+GO(I63，e) = I74
+GO(I63，R) = I73
+
+I64:
+S->i·fSthenSR，e
+S->i·d=E，e
+GO(I64，d) = I76
+GO(I64，f) = I75
+
+I65:
+S->w·hileBdoS，e
+GO(I65，h) = I77
+
+I66:
+S->ifSthe·nSR，t
+GO(I66，n) = I78
+
+I67:
+E->E+T·，+/t
+T->T·*F，*/+/t
+GO(I67，*) = I54
+
+I68:
+T->T*F·，*/+/t
+
+I69:
+F->(E)·，*/+/t
+
+I70:
+S->whileB·doS，t
+GO(I70，d) = I79
+
+I71:
+S->whileBdo·S，#
+S->·ifSthenSR，#
+S->·id=E，#
+S->·whileBdoS，#
+GO(I71，w) = I3
+GO(I71，i) = I2
+GO(I71，S) = I80
+
+I72:
+B->boo·l，d
+GO(I72，l) = I81
+
+I73:
+S->ifSthenSR·，#
+
+I74:
+R->e·lseS，#
+R->e·nd，#
+GO(I74，n) = I83
+GO(I74，l) = I82
+
+I75:
+S->if·SthenSR，e
+S->·ifSthenSR，t
+S->·id=E，t
+S->·whileBdoS，t
+GO(I75，w) = I9
+GO(I75，i) = I8
+GO(I75，S) = I84
+
+I76:
+S->id·=E，e
+GO(I76，=) = I85
+
+I77:
+S->wh·ileBdoS，e
+GO(I77，i) = I86
+
+I78:
+S->ifSthen·SR，t
+S->·ifSthenSR，e
+S->·id=E，e
+S->·whileBdoS，e
+GO(I78，w) = I65
+GO(I78，i) = I64
+GO(I78，S) = I87
+
+I79:
+S->whileBd·oS，t
+GO(I79，o) = I88
+
+I80:
+S->whileBdoS·，#
+
+I81:
+B->bool·，d
+
+I82:
+R->el·seS，#
+GO(I82，s) = I89
+
+I83:
+R->en·d，#
+GO(I83，d) = I90
+
+I84:
+S->ifS·thenSR，e
+GO(I84，t) = I91
+
+I85:
+S->id=·E，e
+E->·E+T，+/e
+E->·T，+/e
+T->·T*F，*/+/e
+T->·F，*/+/e
+F->·(E)，*/+/e
+F->·i，*/+/e
+GO(I85，i) = I96
+GO(I85，() = I95
+GO(I85，F) = I94
+GO(I85，T) = I93
+GO(I85，E) = I92
+
+I86:
+S->whi·leBdoS，e
+GO(I86，l) = I97
+
+I87:
+S->ifSthenS·R，t
+R->·elseS，t
+R->·end，t
+GO(I87，e) = I99
+GO(I87，R) = I98
+
+I88:
+S->whileBdo·S，t
+S->·ifSthenSR，t
+S->·id=E，t
+S->·whileBdoS，t
+GO(I88，w) = I9
+GO(I88，i) = I8
+GO(I88，S) = I100
+
+I89:
+R->els·eS，#
+GO(I89，e) = I101
+
+I90:
+R->end·，#
+
+I91:
+S->ifSt·henSR，e
+GO(I91，h) = I102
+
+I92:
+S->id=E·，e
+E->E·+T，+/e
+GO(I92，+) = I103
+
+I93:
+E->T·，+/e
+T->T·*F，*/+/e
+GO(I93，*) = I104
+
+I94:
+T->F·，*/+/e
+
+I95:
+F->(·E)，*/+/e
+E->·E+T，)/+
+E->·T，)/+
+T->·T*F，)/*/+
+T->·F，)/*/+
+F->·(E)，)/*/+
+F->·i，)/*/+
+GO(I95，i) = I32
+GO(I95，() = I31
+GO(I95，F) = I30
+GO(I95，T) = I29
+GO(I95，E) = I105
+
+I96:
+F->i·，*/+/e
+
+I97:
+S->whil·eBdoS，e
+GO(I97，e) = I106
+
+I98:
+S->ifSthenSR·，t
+
+I99:
+R->e·lseS，t
+R->e·nd，t
+GO(I99，n) = I108
+GO(I99，l) = I107
+
+I100:
+S->whileBdoS·，t
+
+I101:
+R->else·S，#
+S->·ifSthenSR，#
+S->·id=E，#
+S->·whileBdoS，#
+GO(I101，w) = I3
+GO(I101，i) = I2
+GO(I101，S) = I109
+
+I102:
+S->ifSth·enSR，e
+GO(I102，e) = I110
+
+I103:
+E->E+·T，+/e
+T->·T*F，*/+/e
+T->·F，*/+/e
+F->·(E)，*/+/e
+F->·i，*/+/e
+GO(I103，i) = I96
+GO(I103，() = I95
+GO(I103，F) = I94
+GO(I103，T) = I111
+
+I104:
+T->T*·F，*/+/e
+F->·(E)，*/+/e
+F->·i，*/+/e
+GO(I104，i) = I96
+GO(I104，() = I95
+GO(I104，F) = I112
+
+I105:
+F->(E·)，*/+/e
+E->E·+T，)/+
+GO(I105，+) = I45
+GO(I105，)) = I113
+
+I106:
+S->while·BdoS，e
+B->·bool，d
+B->·id，d
+GO(I106，i) = I50
+GO(I106，b) = I49
+GO(I106，B) = I114
+
+I107:
+R->el·seS，t
+GO(I107，s) = I115
+
+I108:
+R->en·d，t
+GO(I108，d) = I116
+
+I109:
+R->elseS·，#
+
+I110:
+S->ifSthe·nSR，e
+GO(I110，n) = I117
+
+I111:
+E->E+T·，+/e
+T->T·*F，*/+/e
+GO(I111，*) = I104
+
+I112:
+T->T*F·，*/+/e
+
+I113:
+F->(E)·，*/+/e
+
+I114:
+S->whileB·doS，e
+GO(I114，d) = I118
+
+I115:
+R->els·eS，t
+GO(I115，e) = I119
+
+I116:
+R->end·，t
+
+I117:
+S->ifSthen·SR，e
+S->·ifSthenSR，e
+S->·id=E，e
+S->·whileBdoS，e
+GO(I117，w) = I65
+GO(I117，i) = I64
+GO(I117，S) = I120
+
+I118:
+S->whileBd·oS，e
+GO(I118，o) = I121
+
+I119:
+R->else·S，t
+S->·ifSthenSR，t
+S->·id=E，t
+S->·whileBdoS，t
+GO(I119，w) = I9
+GO(I119，i) = I8
+GO(I119，S) = I122
+
+I120:
+S->ifSthenS·R，e
+R->·elseS，e
+R->·end，e
+GO(I120，e) = I124
+GO(I120，R) = I123
+
+I121:
+S->whileBdo·S，e
+S->·ifSthenSR，e
+S->·id=E，e
+S->·whileBdoS，e
+GO(I121，w) = I65
+GO(I121，i) = I64
+GO(I121，S) = I125
+
+I122:
+R->elseS·，t
+
+I123:
+S->ifSthenSR·，e
+
+I124:
+R->e·lseS，e
+R->e·nd，e
+GO(I124，n) = I127
+GO(I124，l) = I126
+
+I125:
+S->whileBdoS·，e
+
+I126:
+R->el·seS，e
+GO(I126，s) = I128
+
+I127:
+R->en·d，e
+GO(I127，d) = I129
+
+I128:
+R->els·eS，e
+GO(I128，e) = I130
+
+I129:
+R->end·，e
+
+I130:
+R->else·S，e
+S->·ifSthenSR，e
+S->·id=E，e
+S->·whileBdoS，e
+GO(I130，w) = I65
+GO(I130，i) = I64
+GO(I130，S) = I131
+
+I131:
+R->elseS·，e
+

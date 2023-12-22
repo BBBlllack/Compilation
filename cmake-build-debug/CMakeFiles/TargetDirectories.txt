@@ -1,0 +1,3 @@
+/Users/shj/CLionProjects/compliationBak/cmake-build-debug/CMakeFiles/compliationBak.dir
+/Users/shj/CLionProjects/compliationBak/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/shj/CLionProjects/compliationBak/cmake-build-debug/CMakeFiles/rebuild_cache.dir

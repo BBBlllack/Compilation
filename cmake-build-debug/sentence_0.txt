@@ -1,0 +1,77 @@
+步骤		状态栈		符号栈		输入串		动作说明
+1		0		#		i f i d = i t h e n w h i l e i d d o i f i d = i t h e n i d = i + i e l s e i d = i * i e n d #		ACTION[0,i]=s2，即状态s2入栈
+3		0 2		# i		f i d = i t h e n w h i l e i d d o i f i d = i t h e n i d = i + i e l s e i d = i * i e n d #		ACTION[2,f]=s4，即状态s4入栈
+5		0 2 4		# i f		i d = i t h e n w h i l e i d d o i f i d = i t h e n i d = i + i e l s e i d = i * i e n d #		ACTION[4,i]=s8，即状态s8入栈
+7		0 2 4 8		# i f i		d = i t h e n w h i l e i d d o i f i d = i t h e n i d = i + i e l s e i d = i * i e n d #		ACTION[8,d]=s14，即状态s14入栈
+9		0 2 4 8 14		# i f i d		= i t h e n w h i l e i d d o i f i d = i t h e n i d = i + i e l s e i d = i * i e n d #		ACTION[14,=]=s24，即状态s24入栈
+11		0 2 4 8 14 24		# i f i d =		i t h e n w h i l e i d d o i f i d = i t h e n i d = i + i e l s e i d = i * i e n d #		ACTION[24,i]=s40，即状态s40入栈
+13		0 2 4 8 14 24 40		# i f i d = i		t h e n w h i l e i d d o i f i d = i t h e n i d = i + i e l s e i d = i * i e n d #		r11：用F->i归约，且GOTO[38,F]=38入栈
+15		0 2 4 8 14 24 38		# i f i d = F		t h e n w h i l e i d d o i f i d = i t h e n i d = i + i e l s e i d = i * i e n d #		r9：用T->F归约，且GOTO[37,T]=37入栈
+17		0 2 4 8 14 24 37		# i f i d = T		t h e n w h i l e i d d o i f i d = i t h e n i d = i + i e l s e i d = i * i e n d #		r7：用E->T归约，且GOTO[36,E]=36入栈
+19		0 2 4 8 14 24 36		# i f i d = E		t h e n w h i l e i d d o i f i d = i t h e n i d = i + i e l s e i d = i * i e n d #		r4：用S->id=E归约，且GOTO[7,S]=7入栈
+21		0 2 4 7		# i f S		t h e n w h i l e i d d o i f i d = i t h e n i d = i + i e l s e i d = i * i e n d #		ACTION[7,t]=s12，即状态s12入栈
+23		0 2 4 7 12		# i f S t		h e n w h i l e i d d o i f i d = i t h e n i d = i + i e l s e i d = i * i e n d #		ACTION[12,h]=s22，即状态s22入栈
+25		0 2 4 7 12 22		# i f S t h		e n w h i l e i d d o i f i d = i t h e n i d = i + i e l s e i d = i * i e n d #		ACTION[22,e]=s34，即状态s34入栈
+27		0 2 4 7 12 22 34		# i f S t h e		n w h i l e i d d o i f i d = i t h e n i d = i + i e l s e i d = i * i e n d #		ACTION[34,n]=s51，即状态s51入栈
+29		0 2 4 7 12 22 34 51		# i f S t h e n		w h i l e i d d o i f i d = i t h e n i d = i + i e l s e i d = i * i e n d #		ACTION[51,w]=s65，即状态s65入栈
+31		0 2 4 7 12 22 34 51 65		# i f S t h e n w		h i l e i d d o i f i d = i t h e n i d = i + i e l s e i d = i * i e n d #		ACTION[65,h]=s77，即状态s77入栈
+33		0 2 4 7 12 22 34 51 65 77		# i f S t h e n w h		i l e i d d o i f i d = i t h e n i d = i + i e l s e i d = i * i e n d #		ACTION[77,i]=s86，即状态s86入栈
+35		0 2 4 7 12 22 34 51 65 77 86		# i f S t h e n w h i		l e i d d o i f i d = i t h e n i d = i + i e l s e i d = i * i e n d #		ACTION[86,l]=s97，即状态s97入栈
+37		0 2 4 7 12 22 34 51 65 77 86 97		# i f S t h e n w h i l		e i d d o i f i d = i t h e n i d = i + i e l s e i d = i * i e n d #		ACTION[97,e]=s106，即状态s106入栈
+39		0 2 4 7 12 22 34 51 65 77 86 97 106		# i f S t h e n w h i l e		i d d o i f i d = i t h e n i d = i + i e l s e i d = i * i e n d #		ACTION[106,i]=s50，即状态s50入栈
+41		0 2 4 7 12 22 34 51 65 77 86 97 106 50		# i f S t h e n w h i l e i		d d o i f i d = i t h e n i d = i + i e l s e i d = i * i e n d #		ACTION[50,d]=s62，即状态s62入栈
+43		0 2 4 7 12 22 34 51 65 77 86 97 106 50 62		# i f S t h e n w h i l e i d		d o i f i d = i t h e n i d = i + i e l s e i d = i * i e n d #		r13：用B->id归约，且GOTO[114,B]=114入栈
+45		0 2 4 7 12 22 34 51 65 77 86 97 106 114		# i f S t h e n w h i l e B		d o i f i d = i t h e n i d = i + i e l s e i d = i * i e n d #		ACTION[114,d]=s118，即状态s118入栈
+47		0 2 4 7 12 22 34 51 65 77 86 97 106 114 118		# i f S t h e n w h i l e B d		o i f i d = i t h e n i d = i + i e l s e i d = i * i e n d #		ACTION[118,o]=s121，即状态s121入栈
+49		0 2 4 7 12 22 34 51 65 77 86 97 106 114 118 121		# i f S t h e n w h i l e B d o		i f i d = i t h e n i d = i + i e l s e i d = i * i e n d #		ACTION[121,i]=s64，即状态s64入栈
+51		0 2 4 7 12 22 34 51 65 77 86 97 106 114 118 121 64		# i f S t h e n w h i l e B d o i		f i d = i t h e n i d = i + i e l s e i d = i * i e n d #		ACTION[64,f]=s75，即状态s75入栈
+53		0 2 4 7 12 22 34 51 65 77 86 97 106 114 118 121 64 75		# i f S t h e n w h i l e B d o i f		i d = i t h e n i d = i + i e l s e i d = i * i e n d #		ACTION[75,i]=s8，即状态s8入栈
+55		0 2 4 7 12 22 34 51 65 77 86 97 106 114 118 121 64 75 8		# i f S t h e n w h i l e B d o i f i		d = i t h e n i d = i + i e l s e i d = i * i e n d #		ACTION[8,d]=s14，即状态s14入栈
+57		0 2 4 7 12 22 34 51 65 77 86 97 106 114 118 121 64 75 8 14		# i f S t h e n w h i l e B d o i f i d		= i t h e n i d = i + i e l s e i d = i * i e n d #		ACTION[14,=]=s24，即状态s24入栈
+59		0 2 4 7 12 22 34 51 65 77 86 97 106 114 118 121 64 75 8 14 24		# i f S t h e n w h i l e B d o i f i d =		i t h e n i d = i + i e l s e i d = i * i e n d #		ACTION[24,i]=s40，即状态s40入栈
+61		0 2 4 7 12 22 34 51 65 77 86 97 106 114 118 121 64 75 8 14 24 40		# i f S t h e n w h i l e B d o i f i d = i		t h e n i d = i + i e l s e i d = i * i e n d #		r11：用F->i归约，且GOTO[38,F]=38入栈
+63		0 2 4 7 12 22 34 51 65 77 86 97 106 114 118 121 64 75 8 14 24 38		# i f S t h e n w h i l e B d o i f i d = F		t h e n i d = i + i e l s e i d = i * i e n d #		r9：用T->F归约，且GOTO[37,T]=37入栈
+65		0 2 4 7 12 22 34 51 65 77 86 97 106 114 118 121 64 75 8 14 24 37		# i f S t h e n w h i l e B d o i f i d = T		t h e n i d = i + i e l s e i d = i * i e n d #		r7：用E->T归约，且GOTO[36,E]=36入栈
+67		0 2 4 7 12 22 34 51 65 77 86 97 106 114 118 121 64 75 8 14 24 36		# i f S t h e n w h i l e B d o i f i d = E		t h e n i d = i + i e l s e i d = i * i e n d #		r4：用S->id=E归约，且GOTO[84,S]=84入栈
+69		0 2 4 7 12 22 34 51 65 77 86 97 106 114 118 121 64 75 84		# i f S t h e n w h i l e B d o i f S		t h e n i d = i + i e l s e i d = i * i e n d #		ACTION[84,t]=s91，即状态s91入栈
+71		0 2 4 7 12 22 34 51 65 77 86 97 106 114 118 121 64 75 84 91		# i f S t h e n w h i l e B d o i f S t		h e n i d = i + i e l s e i d = i * i e n d #		ACTION[91,h]=s102，即状态s102入栈
+73		0 2 4 7 12 22 34 51 65 77 86 97 106 114 118 121 64 75 84 91 102		# i f S t h e n w h i l e B d o i f S t h		e n i d = i + i e l s e i d = i * i e n d #		ACTION[102,e]=s110，即状态s110入栈
+75		0 2 4 7 12 22 34 51 65 77 86 97 106 114 118 121 64 75 84 91 102 110		# i f S t h e n w h i l e B d o i f S t h e		n i d = i + i e l s e i d = i * i e n d #		ACTION[110,n]=s117，即状态s117入栈
+77		0 2 4 7 12 22 34 51 65 77 86 97 106 114 118 121 64 75 84 91 102 110 117		# i f S t h e n w h i l e B d o i f S t h e n		i d = i + i e l s e i d = i * i e n d #		ACTION[117,i]=s64，即状态s64入栈
+79		0 2 4 7 12 22 34 51 65 77 86 97 106 114 118 121 64 75 84 91 102 110 117 64		# i f S t h e n w h i l e B d o i f S t h e n i		d = i + i e l s e i d = i * i e n d #		ACTION[64,d]=s76，即状态s76入栈
+81		0 2 4 7 12 22 34 51 65 77 86 97 106 114 118 121 64 75 84 91 102 110 117 64 76		# i f S t h e n w h i l e B d o i f S t h e n i d		= i + i e l s e i d = i * i e n d #		ACTION[76,=]=s85，即状态s85入栈
+83		0 2 4 7 12 22 34 51 65 77 86 97 106 114 118 121 64 75 84 91 102 110 117 64 76 85		# i f S t h e n w h i l e B d o i f S t h e n i d =		i + i e l s e i d = i * i e n d #		ACTION[85,i]=s96，即状态s96入栈
+85		0 2 4 7 12 22 34 51 65 77 86 97 106 114 118 121 64 75 84 91 102 110 117 64 76 85 96		# i f S t h e n w h i l e B d o i f S t h e n i d = i		+ i e l s e i d = i * i e n d #		r11：用F->i归约，且GOTO[94,F]=94入栈
+87		0 2 4 7 12 22 34 51 65 77 86 97 106 114 118 121 64 75 84 91 102 110 117 64 76 85 94		# i f S t h e n w h i l e B d o i f S t h e n i d = F		+ i e l s e i d = i * i e n d #		r9：用T->F归约，且GOTO[93,T]=93入栈
+89		0 2 4 7 12 22 34 51 65 77 86 97 106 114 118 121 64 75 84 91 102 110 117 64 76 85 93		# i f S t h e n w h i l e B d o i f S t h e n i d = T		+ i e l s e i d = i * i e n d #		r7：用E->T归约，且GOTO[92,E]=92入栈
+91		0 2 4 7 12 22 34 51 65 77 86 97 106 114 118 121 64 75 84 91 102 110 117 64 76 85 92		# i f S t h e n w h i l e B d o i f S t h e n i d = E		+ i e l s e i d = i * i e n d #		ACTION[92,+]=s103，即状态s103入栈
+93		0 2 4 7 12 22 34 51 65 77 86 97 106 114 118 121 64 75 84 91 102 110 117 64 76 85 92 103		# i f S t h e n w h i l e B d o i f S t h e n i d = E +		i e l s e i d = i * i e n d #		ACTION[103,i]=s96，即状态s96入栈
+95		0 2 4 7 12 22 34 51 65 77 86 97 106 114 118 121 64 75 84 91 102 110 117 64 76 85 92 103 96		# i f S t h e n w h i l e B d o i f S t h e n i d = E + i		e l s e i d = i * i e n d #		r11：用F->i归约，且GOTO[94,F]=94入栈
+97		0 2 4 7 12 22 34 51 65 77 86 97 106 114 118 121 64 75 84 91 102 110 117 64 76 85 92 103 94		# i f S t h e n w h i l e B d o i f S t h e n i d = E + F		e l s e i d = i * i e n d #		r9：用T->F归约，且GOTO[111,T]=111入栈
+99		0 2 4 7 12 22 34 51 65 77 86 97 106 114 118 121 64 75 84 91 102 110 117 64 76 85 92 103 111		# i f S t h e n w h i l e B d o i f S t h e n i d = E + T		e l s e i d = i * i e n d #		r6：用E->E+T归约，且GOTO[92,E]=92入栈
+101		0 2 4 7 12 22 34 51 65 77 86 97 106 114 118 121 64 75 84 91 102 110 117 64 76 85 92		# i f S t h e n w h i l e B d o i f S t h e n i d = E		e l s e i d = i * i e n d #		r4：用S->id=E归约，且GOTO[120,S]=120入栈
+103		0 2 4 7 12 22 34 51 65 77 86 97 106 114 118 121 64 75 84 91 102 110 117 120		# i f S t h e n w h i l e B d o i f S t h e n S		e l s e i d = i * i e n d #		ACTION[120,e]=s124，即状态s124入栈
+105		0 2 4 7 12 22 34 51 65 77 86 97 106 114 118 121 64 75 84 91 102 110 117 120 124		# i f S t h e n w h i l e B d o i f S t h e n S e		l s e i d = i * i e n d #		ACTION[124,l]=s126，即状态s126入栈
+107		0 2 4 7 12 22 34 51 65 77 86 97 106 114 118 121 64 75 84 91 102 110 117 120 124 126		# i f S t h e n w h i l e B d o i f S t h e n S e l		s e i d = i * i e n d #		ACTION[126,s]=s128，即状态s128入栈
+109		0 2 4 7 12 22 34 51 65 77 86 97 106 114 118 121 64 75 84 91 102 110 117 120 124 126 128		# i f S t h e n w h i l e B d o i f S t h e n S e l s		e i d = i * i e n d #		ACTION[128,e]=s130，即状态s130入栈
+111		0 2 4 7 12 22 34 51 65 77 86 97 106 114 118 121 64 75 84 91 102 110 117 120 124 126 128 130		# i f S t h e n w h i l e B d o i f S t h e n S e l s e		i d = i * i e n d #		ACTION[130,i]=s64，即状态s64入栈
+113		0 2 4 7 12 22 34 51 65 77 86 97 106 114 118 121 64 75 84 91 102 110 117 120 124 126 128 130 64		# i f S t h e n w h i l e B d o i f S t h e n S e l s e i		d = i * i e n d #		ACTION[64,d]=s76，即状态s76入栈
+115		0 2 4 7 12 22 34 51 65 77 86 97 106 114 118 121 64 75 84 91 102 110 117 120 124 126 128 130 64 76		# i f S t h e n w h i l e B d o i f S t h e n S e l s e i d		= i * i e n d #		ACTION[76,=]=s85，即状态s85入栈
+117		0 2 4 7 12 22 34 51 65 77 86 97 106 114 118 121 64 75 84 91 102 110 117 120 124 126 128 130 64 76 85		# i f S t h e n w h i l e B d o i f S t h e n S e l s e i d =		i * i e n d #		ACTION[85,i]=s96，即状态s96入栈
+119		0 2 4 7 12 22 34 51 65 77 86 97 106 114 118 121 64 75 84 91 102 110 117 120 124 126 128 130 64 76 85 96		# i f S t h e n w h i l e B d o i f S t h e n S e l s e i d = i		* i e n d #		r11：用F->i归约，且GOTO[94,F]=94入栈
+121		0 2 4 7 12 22 34 51 65 77 86 97 106 114 118 121 64 75 84 91 102 110 117 120 124 126 128 130 64 76 85 94		# i f S t h e n w h i l e B d o i f S t h e n S e l s e i d = F		* i e n d #		r9：用T->F归约，且GOTO[93,T]=93入栈
+123		0 2 4 7 12 22 34 51 65 77 86 97 106 114 118 121 64 75 84 91 102 110 117 120 124 126 128 130 64 76 85 93		# i f S t h e n w h i l e B d o i f S t h e n S e l s e i d = T		* i e n d #		ACTION[93,*]=s104，即状态s104入栈
+125		0 2 4 7 12 22 34 51 65 77 86 97 106 114 118 121 64 75 84 91 102 110 117 120 124 126 128 130 64 76 85 93 104		# i f S t h e n w h i l e B d o i f S t h e n S e l s e i d = T *		i e n d #		ACTION[104,i]=s96，即状态s96入栈
+127		0 2 4 7 12 22 34 51 65 77 86 97 106 114 118 121 64 75 84 91 102 110 117 120 124 126 128 130 64 76 85 93 104 96		# i f S t h e n w h i l e B d o i f S t h e n S e l s e i d = T * i		e n d #		r11：用F->i归约，且GOTO[112,F]=112入栈
+129		0 2 4 7 12 22 34 51 65 77 86 97 106 114 118 121 64 75 84 91 102 110 117 120 124 126 128 130 64 76 85 93 104 112		# i f S t h e n w h i l e B d o i f S t h e n S e l s e i d = T * F		e n d #		r8：用T->T*F归约，且GOTO[93,T]=93入栈
+131		0 2 4 7 12 22 34 51 65 77 86 97 106 114 118 121 64 75 84 91 102 110 117 120 124 126 128 130 64 76 85 93		# i f S t h e n w h i l e B d o i f S t h e n S e l s e i d = T		e n d #		r7：用E->T归约，且GOTO[92,E]=92入栈
+133		0 2 4 7 12 22 34 51 65 77 86 97 106 114 118 121 64 75 84 91 102 110 117 120 124 126 128 130 64 76 85 92		# i f S t h e n w h i l e B d o i f S t h e n S e l s e i d = E		e n d #		r4：用S->id=E归约，且GOTO[131,S]=131入栈
+135		0 2 4 7 12 22 34 51 65 77 86 97 106 114 118 121 64 75 84 91 102 110 117 120 124 126 128 130 131		# i f S t h e n w h i l e B d o i f S t h e n S e l s e S		e n d #		r2：用R->elseS归约，且GOTO[123,R]=123入栈
+137		0 2 4 7 12 22 34 51 65 77 86 97 106 114 118 121 64 75 84 91 102 110 117 120 123		# i f S t h e n w h i l e B d o i f S t h e n S R		e n d #		r1：用S->ifSthenSR归约，且GOTO[125,S]=125入栈
+139		0 2 4 7 12 22 34 51 65 77 86 97 106 114 118 121 125		# i f S t h e n w h i l e B d o S		e n d #		r5：用S->whileBdoS归约，且GOTO[63,S]=63入栈
+141		0 2 4 7 12 22 34 51 63		# i f S t h e n S		e n d #		ACTION[63,e]=s74，即状态s74入栈
+143		0 2 4 7 12 22 34 51 63 74		# i f S t h e n S e		n d #		ACTION[74,n]=s83，即状态s83入栈
+145		0 2 4 7 12 22 34 51 63 74 83		# i f S t h e n S e n		d #		ACTION[83,d]=s90，即状态s90入栈
+147		0 2 4 7 12 22 34 51 63 74 83 90		# i f S t h e n S e n d		#		r3：用R->end归约，且GOTO[73,R]=73入栈
+149		0 2 4 7 12 22 34 51 63 73		# i f S t h e n S R		#		r1：用S->ifSthenSR归约，且GOTO[1,S]=1入栈
+151		0 1		# S		#		acc：分析成功
