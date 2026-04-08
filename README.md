@@ -1,7 +1,5 @@
 ### 编译原理代码使用说明
 
-#### 计212 申洪建 210236
-
 ### 本代码已经托管在github上
 https://github.com/BBBlllack/Compilation/
 
